@@ -154,6 +154,7 @@
 
   document.addEventListener("click", (e) => {
     if (e.target.closest("a, button")) return;
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     const mid = window.innerWidth / 2;
     if (e.clientX >= mid) next();
     else prev();
